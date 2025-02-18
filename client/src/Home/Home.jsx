@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import SocialLinks from "../components/SocialLinks";
 import Button from "../components/Button";
 import CustomLink from "../components/CustomLink";
+import BelowHomeContent from "../components/BelowHomeContent";
 function Home() {
   return (
     <>
       <main
-        className="h-[100vh] border-2 border-red-500 flex flex-col justify-center items-center bg-cover bg-center"
+        className="h-[100vh]  flex flex-col justify-center items-center bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1699769966730-037736d7289c?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -38,8 +39,11 @@ function Home() {
           </div>
         </section>
 
-        <section className="border-2 border-green-500 h-[25%] w-[100%]">
-          below
+        <section className=" h-[25%] w-[100%] flex justify-around items-center">
+          <BelowHomeContent content="All-in-One Productivity – Manage your to-do lists and notes in one seamless application, keeping everything organized."/>
+          <BelowHomeContent content={"Effortless Task Management – Prioritize, categorize, and track your tasks with ease, ensuring you stay on top of your schedule."}/>
+          <BelowHomeContent content={"Clutter-Free & Intuitive – A minimal and distraction-free design helps you focus, making productivity simple and stress-free."}/>
+
         </section>
       </main>
     </>
