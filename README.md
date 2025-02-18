@@ -67,3 +67,13 @@ Or using yarn:
 yarn build
 yarn start
 ```
+
+
+# To start the development server:
+
+
+## For installation and setup instructions, please refer to the official Tailwind CSS documentation:
+
+### Installation & Setup
+
+https://tailwindcss.com/docs/installation/using-vite
