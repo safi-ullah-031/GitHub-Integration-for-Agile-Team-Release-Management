@@ -4,7 +4,7 @@ function Button({buttonname}) {
   return (
     <>
     
-<button>
+<button className='homebtn'>
   <span> 
    {buttonname}
   </span>

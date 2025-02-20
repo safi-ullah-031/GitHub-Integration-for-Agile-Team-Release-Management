@@ -1,6 +1,6 @@
 /* From Uiverse.io by Ali-Tahmazi99 */ 
 /* From uiverse.io by @Ali-Tahmazi99 */
-button {
+.homebtn {
     display: inline-block;
     width: 200px;
     height: 50px;
@@ -12,8 +12,8 @@ button {
     z-index: 1;
    }
    
-   button::before,
-   button::after {
+   .homebtn::before,
+   .homebtn::after {
     content: '';
     position: absolute;
     top: 0;
@@ -25,27 +25,27 @@ button {
     z-index: -1;
    }
    
-   button::before {
+   .homebtn::before {
     left: -10px;
     background: #7c7c7c;
    }
    
-   button::after {
+   .homebtn::after {
     right: -10px;
     background: #ffffff;
    }
    
-   button:hover::before,
-   button:hover::after {
+   .homebtn:hover::before,
+   .homebtn:hover::after {
     width: 58%;
    }
    
-   button:hover span {
+   .homebtn:hover span {
     color: #000000;
     transition: 0.3s;
    }
    
-   button span {
+   .homebtn span {
     color: #ffffff;
     font-size: 1rem;
     transition: all 0.3s ease-in;

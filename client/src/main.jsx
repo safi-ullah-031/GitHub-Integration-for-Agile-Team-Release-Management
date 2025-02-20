@@ -18,6 +18,10 @@ const router=createBrowserRouter(
 {
   path:"signup",
   element:<Signup/>
+},
+{
+  path:"signin",
+  element:<Signin/>
 }
       ]
     }
@@ -26,6 +30,7 @@ const router=createBrowserRouter(
 
 
 import App from "./App";
+import Signin from "./SignIn/Signin";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

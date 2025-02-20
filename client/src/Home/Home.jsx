@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SocialLinks from "../components/SocialLinks";
-import Button from "../components/Button";
-import CustomLink from "../components/CustomLink";
-import BelowHomeContent from "../components/BelowHomeContent";
+import SocialLinks from "./components/SocialLinks";
+import Button from "./components/Button";
+import CustomLink from "./components/CustomLink";
+import BelowHomeContent from "./components/BelowHomeContent";
 function Home() {
   return (
     <>
