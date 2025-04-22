@@ -25,3 +25,4 @@ replay_pid*
 
 # extra editors and compilers files
 *.idea
+*.pem
