@@ -10,7 +10,7 @@ This is a MVC architecture based application where controller returns a page wit
 Checkout the repo and move to the directory
 
 ```
-git clone https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero/java-maven-sonar-argocd-helm-k8s/sprint-boot-app
+git clone ttps://github.com/safi-ullah-031/GitHub-Integration-for-Agile-Team-Release-Management/sprint-boot-app
 cd java-maven-sonar-argocd-helm-k8s/sprint-boot-app
 ```
 
@@ -53,13 +53,13 @@ Hurray !! Access the application on `http://<ip-address>:8010`
 
 ```
 System Requirements
-Java 17+ (Oracle JDK, OpenJDK, or AdoptOpenJDK)
+Java 21+ (Oracle JDK, OpenJDK, or AdoptOpenJDK)
 Hardware Recommendations:
    Minimum 2 GB RAM
    2 CPU cores
 sudo apt update && sudo apt install unzip -y
 adduser sonarqube
-wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.4.1.88267.zip
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-25.4.0.105899.zip
 unzip *
 chown -R sonarqube:sonarqube /opt/sonarqube
 chmod -R 775 /opt/sonarqube
