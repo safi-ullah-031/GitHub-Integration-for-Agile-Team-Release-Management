@@ -10,7 +10,7 @@ This is a MVC architecture based application where controller returns a page wit
 Checkout the repo and move to the directory
 
 ```
-git clone ttps://github.com/safi-ullah-031/GitHub-Integration-for-Agile-Team-Release-Management/sprint-boot-app
+git clone ttps://github.com/safi-ullah-031/GitHub-Integration-for-Agile-Team-Release-Management/sprint-boot-demo
 cd java-maven-sonar-argocd-helm-k8s/sprint-boot-app
 ```
 
