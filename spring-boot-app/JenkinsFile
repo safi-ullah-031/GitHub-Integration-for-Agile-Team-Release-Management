@@ -9,35 +9,35 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //https://github.com/safi-ullah-031/GitHub-Integration-for-Agile-Team-Release-Management'
+        //git branch: 'main', url: 'https://github.com/safi-ullah-031/GitHub-Integration-for-Agile-Team-Release-Management'
       }
     }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
-        sh 'cd spring-boot-demo && mvn clean package'
+        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
       }
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://http://54.147.189.210:9000"
+        SONAR_URL = "http://34.201.116.83:9000"
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-          sh 'cd spring-boot-demo && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+          sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
         }
       }
     }
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "abhishekf5/ultimate-cicd:${BUILD_NUMBER}"
-        // DOCKERFILE_LOCATION = "spring-boot-demo/Dockerfile"
+        // DOCKERFILE_LOCATION = "spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
       steps {
         script {
-            sh 'cd spring-boot-demo && docker build -t ${DOCKER_IMAGE} .'
+            sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
             def dockerImage = docker.image("${DOCKER_IMAGE}")
             docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
                 dockerImage.push()
@@ -47,14 +47,14 @@ pipeline {
     }
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "GitHub-Integration-for-Agile-Team-Release-Management"
+            GIT_REPO_NAME = "GitHub-Integration-for-Agile-Team-Release-Management/"
             GIT_USER_NAME = "safi-ullah-031"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-                    git config user.email "safiullah445@outlook.com"
-                    git config user.name "Safi Ullah"
+                    git config user.email "su439178@gmail.com"
+                    git config user.name "safi-ullah-031"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
                     git add spring-boot-app-manifests/deployment.yml
